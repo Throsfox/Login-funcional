@@ -1,6 +1,9 @@
-const form = document.getElementById("form");
+const entrar = document.getElementById("entrar");
+const cadastrar = document.getElementById("cadastrar")
+const cadastro = document.getElementById("cadastro")
 
-form.addEventListener("submit", function(event) {
+
+entrar.addEventListener("click", function(event) {
     event.preventDefault();
     const usuario = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
@@ -10,4 +13,8 @@ form.addEventListener("submit", function(event) {
     else {
         alert("Usuario ou senha incorretos.")
     }
+});
+
+cadastrar.addEventListener("click", () => {
+    window.location.href = "cadastrar.html";
 });

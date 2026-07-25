@@ -9,30 +9,35 @@ body {
     align-items: center;
     min-height: 100vh;
 }
-#Back_login {
-    height: 240px;
+#Back_login,
+#Back_cadastro {
+    height: 260px;
     width: 200px;
     padding: 4px;
     border: solid black 2px;
     border-radius: 16px;
     box-shadow: 8px 4px rgba(0,0,0,.1);
 }
-#Login {
+#Login,
+#Cadastro {
     display: flex;
     flex-direction: column;
     gap: 2px;
     margin: 16px;
 }
-#Login form {
+#Login form,
+#Cadastro form {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
-#Login form button {
+#Login form button,
+#Cadastro form button {
     margin: 4px;
     padding: 8px;
-    border: none;
+    border: solid black 1px;
     border-radius: 4px;
     cursor: pointer;
     background-color: rgb(81, 255, 116);
 }
+

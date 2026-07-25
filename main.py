@@ -1,4 +1,6 @@
 import sqlite3
+from flask import flask, request
+
 
 conexao = sqlite3.connect("banco.db")
 cursor = conexao.cursor()
