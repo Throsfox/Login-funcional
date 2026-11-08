@@ -11,8 +11,8 @@ body {
 }
 #Back_login,
 #Back_cadastro {
-    height: 260px;
-    width: 200px;
+    height: 360px;
+    width: 250px;
     padding: 4px;
     border: solid black 2px;
     border-radius: 16px;

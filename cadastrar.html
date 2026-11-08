@@ -12,11 +12,21 @@
             <h1>Cadastro</h1>
             <form id="form">
                 <label for="nome">Nome:</label>
-                    <input type="text" name="Nome" id="nome" placeholder>
+                <input type="text" name="nome" id="nome" required>
+
                 <label for="email">E-mail:</label>
-                    <input type="text" name="E-mail" id="email" placeholder>
+                <input type="email" name="email" id="email" required>
+
                 <label for="senha">Senha:</label>
-                    <input type="password" name="Senha" id="senha" placeholder>
+                <input type="password" name="senha" id="senha" required>
+
+                <label for="opcoes">Escolha uma opção:</label>
+                <select id="opcoes" name="tipoCadastro" required>
+                    <option value="" selected disabled>Selecione uma opção</option>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="cliente">Cliente</option>
+                </select>
+
                 <button type="submit" id="cadastro">Finalizar</button>
             </form>
         </div>
