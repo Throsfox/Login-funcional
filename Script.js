@@ -22,6 +22,11 @@ if (entrar) {
 }
 
 /*Cadastro*/
+if(cadastrar){
+    cadastrar.addEventListener("click", function(event) {
+        window.location.href = "cadastrar.html";
+    })
+}
 
 if (formulario && opcoes) {
     formulario.addEventListener("submit", function(event) {
@@ -40,3 +45,37 @@ if (formulario && opcoes) {
         }
     });
 }
+
+const tipoCadastro = document.getElementById("opcoes");
+const dadosAdicionais = document.getElementById("dadosAdicionais");
+const campoCPF = document.getElementById("campoCPF");
+const campoCNPJ = document.getElementById("campoCNPJ");
+const cpf = document.getElementById("cpf");
+const cnpj = document.getElementById("cnpj");
+
+tipoCadastro.addEventListener("change", function() {
+
+    dadosAdicionais.hidden = false;
+
+    campoCPF.hidden = true;
+    campoCNPJ.hidden = true;
+
+    cpf.required = false;
+    cnpj.required = false;
+
+    if (tipoCadastro.value === "cliente") {
+
+        campoCPF.hidden = false;
+        cpf.required = true;
+
+    }
+
+    else if (tipoCadastro.value === "vendedor") {
+
+        campoCNPJ.hidden = false;
+        cnpj.required = true;
+
+    }
+
+});
+
