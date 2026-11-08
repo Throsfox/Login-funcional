@@ -8,6 +8,17 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+}
+#trapaca{
+    position: absolute;
+    left: 15px;
+    top: 10%;
+}
+#trapaca2{
+    position: absolute;
+    left: 15px;
+    top: 15%;
 }
 #Back_login,
 #Back_cadastro {
