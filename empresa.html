@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de ar LTDA | Painel da Empresa</title>
+    <link rel="stylesheet" href="empresa.css">
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+    <div id="BarraNav">
+        <nav id="Navegacao">
+            <h3 class="logo">Central de ar LTDA | Painel da Empresa</h3>
+
+            <div id="InfoVendedor">
+                <div class="dadosVendedor">
+                    <strong id="nomeUsuario"></strong>
+                    <span>Administrador</span>
+                </div>
+
+                <img src="imagens/pessoa.png" alt="Perfil do administrador">
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="estruturaPainel">
+
+        <!-- MENU LATERAL -->
+        <aside id="MenuLateral">
+            <div class="identificacaoLoja">
+                <div class="iconeLoja"></div>
+
+                <div>
+                    <h3 id="nomeEmpresa"></h3>
+                    <p>Fabricante</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <nav class="menuOpcoes">
+                <h4>MENU PRINCIPAL</h4>
+
+                <a href="#Dashboard" class="opcaoMenu ativa">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="#Catalogo" class="opcaoMenu">
+                    <span>▣</span>
+                    Catálogo
+                </a>
+
+                <!-- TELA SEPARADA (será criada) -->
+                <a href="novo-produto.html" class="opcaoMenu">
+                    <span>+</span>
+                    Novo produto
+                </a>
+            </nav>
+
+            <div class="menuInferior">
+                <p>Central de ar LTDA</p>
+                <a href="index.html">Voltar à página principal</a>
+            </div>
+        </aside>
+
+
+        <!-- ÁREA DE TRABALHO -->
+        <main id="ConteudoPainel">
+
+            <!-- DASHBOARD -->
+            <section id="Dashboard">
+                <div class="tituloSecao">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Resumo do catálogo disponível para os vendedores.</p>
+                    </div>
+                </div>
+
+                <!-- INDICADORES -->
+                <div class="gradeIndicadores">
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Produtos no catálogo</span>
+                        </div>
+
+                        <h2 id="totalProdutos"></h2>
+                        <p>Todos os produtos cadastrados</p>
+                    </div>
+
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Produtos ativos</span>
+                        </div>
+
+                        <h2 id="produtosAtivos"></h2>
+                        <p>Disponíveis para os vendedores revenderem</p>
+                    </div>
+
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Produtos descontinuados</span>
+                        </div>
+
+                        <h2 id="produtosDescontinuados"></h2>
+                        <p>Fora de fabricação</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- CATÁLOGO -->
+            <section id="Catalogo">
+                <div class="cabecalhoProdutos">
+                    <div>
+                        <h2>Catálogo de produtos</h2>
+                        <p>Produtos que os vendedores podem comprar para revender.</p>
+                    </div>
+
+                    <!-- TELA SEPARADA (será criada) -->
+                    <a href="novoProduto.html" class="btnAdicionar">
+                        + Novo produto
+                    </a>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="areaFiltros">
+                    <input
+                        type="text"
+                        id="pesquisaCatalogo"
+                        placeholder="Pesquisar produto ou modelo..."
+                        class="campoPesquisa"
+                    >
+
+                    <select id="filtroTipo" class="campoFiltro">
+                        <option value="">Todos os tipos</option>
+                        <option value="ar-condicionado">Ar-condicionado</option>
+                        <option value="climatizador">Climatizador</option>
+                        <option value="acessorio">Acessório</option>
+                        <option value="peca">Peça de reposição</option>
+                    </select>
+
+                    <select id="filtroSituacao" class="campoFiltro">
+                        <option value="">Todas as situações</option>
+                        <option value="ativo">Ativo</option>
+                        <option value="descontinuado">Descontinuado</option>
+                    </select>
+                </div>
+
+                <!-- TABELA DO CATÁLOGO -->
+                <div class="containerTabela">
+                    <table id="TabelaProdutos">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Tipo</th>
+                                <th>Preço de fábrica</th>
+                                <th>Situação</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <!-- O JAVASCRIPT INSERIRÁ AS LINHAS NESTE TBODY -->
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="rodapeTabela">
+                    <p id="resumoCatalogo"></p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
