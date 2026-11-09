@@ -1,29 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste</title>
-    <link rel="stylesheet" href="paginas.css">
+    <title>Central de ar LTDA | Painel do Vendedor</title>
+    <link rel="stylesheet" href="vendedor.css">
 </head>
+
 <body>
-    <!-- Navegação -->
+    <!-- CABEÇALHO -->
     <div id="BarraNav">
         <nav id="Navegacao">
-            <h3 class="logo">Empresa de ar LTDA</h3>
-            <input id="BarraPesq" type="text" placeholder="Pesquisar por modelo, BTU, marca...">
-            <div id="BarraInfo">
-                <a title="Notificações" class="Info"><img id="ImgNotifi" src="imagens/sino.png"></a>
-                <a title="Carrinho" class="Info"><img id="ImgCarrinho" src="imagens/carrinho.png"></a>
-                <a title="Minha Conta" class="Info"><img id="UsuConta" src="imagens/pessoa.png"></a>
+            <h3 class="logo">Central de ar LTDA | Painel do Vendedor</h3>
+
+            <div id="InfoVendedor">
+                <div class="dadosVendedor">
+                    <strong></strong>
+                    <span>Vendedor parceiro</span>
+                </div>
+
+                <img src="imagens/pessoa.png" alt="Perfil do vendedor">
             </div>
         </nav>
     </div>
 
-    <!-- Rodapé -->
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="estruturaPainel">
+
+        <!-- MENU LATERAL -->
+        <aside id="MenuLateral">
+            <div class="identificacaoLoja">
+                <div class="iconeLoja"></div>
+
+                <div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <nav class="menuOpcoes">
+                <h4>MENU PRINCIPAL</h4>
+
+                <a href="#Dashboard" class="opcaoMenu ativa">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="#MeusProdutos" class="opcaoMenu">
+                    <span>▣</span>
+                    Meus Produtos
+                </a>
+
+                <a href="#Promocoes" class="opcaoMenu">
+                    <span>٪</span>
+                    Promoções
+                </a>
+
+                <a href="#MinhaLoja" class="opcaoMenu">
+                    <span>⌂</span>
+                    Minha Loja
+                </a>
+
+                <a href="#Configuracoes" class="opcaoMenu">
+                    <span>⚙</span>
+                    Configurações
+                </a>
+            </nav>
+
+            <div class="menuInferior">
+                <p>Central de ar LTDA</p>
+                <a href="index.html">Voltar à página principal</a>
+            </div>
+        </aside>
+
+
+        <!-- ÁREA DE TRABALHO -->
+        <main id="ConteudoPainel">
+
+            <!-- DASHBOARD -->
+            <section id="Dashboard">
+                <div class="tituloSecao">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Bem-vindo ao seu painel de gerenciamento.</p>
+                    </div>
+                </div>
+
+                <!-- INDICADORES -->
+                <div class="gradeIndicadores">
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Produtos anunciados</span>
+                        </div>
+
+                        <h2></h2>
+                        <p>Produtos disponíveis na sua loja</p>
+                    </div>
+
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Ofertas ativas</span>
+                        </div>
+
+                        <h2></h2>
+                        <p>Produtos com preço promocional</p>
+                    </div>
+
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Região de atuação</span>
+                        </div>
+
+                        <h2></h2>
+                        <p>Região cadastrada da sua loja</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- MEUS PRODUTOS -->
+            <section id="MeusProdutos">
+                <div class="cabecalhoProdutos">
+                    <div>
+                        <h2>Meus Produtos</h2>
+                        <p>Gerencie os produtos comercializados pela sua loja.</p>
+                    </div>
+
+                    <button type="button" class="btnAdicionar">
+                        + Adicionar produto
+                    </button>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="areaFiltros">
+                    <input
+                        type="text"
+                        placeholder="Pesquisar produto, marca ou modelo..."
+                        class="campoPesquisa"
+                    >
+
+                    <select class="campoFiltro">
+                        <option value="">Todas as marcas</option>
+                    </select>
+
+                    <select class="campoFiltro">
+                        <option value="">Todas as situações</option>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select>
+                </div>
+
+                <!-- TABELA DE PRODUTOS -->
+                <div class="containerTabela">
+                    <table id="TabelaProdutos">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Marca</th>
+                                <th>Preço atual</th>
+                                <th>Promoção</th>
+                                <th>Situação</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <!-- O JAVASCRIPT INSERIRÁ AS LINHAS NESTE TBODY -->
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="rodapeTabela">
+                    <p></p>
+                </div>
+            </section>
+
+
+            <!-- PROMOÇÕES -->
+            <section id="Promocoes">
+                <div class="tituloBloco">
+                    <h2>Promoções em destaque</h2>
+                    <p>Acompanhe os produtos que estão com preços promocionais.</p>
+                </div>
+
+                <!-- O JAVASCRIPT INSERIRÁ OS CARDS DE PROMOÇÃO AQUI -->
+                <div class="gradePromocoes"></div>
+            </section>
+
+
+            <!-- MINHA LOJA -->
+            <section id="MinhaLoja">
+                <div class="tituloBloco">
+                    <h2>Informações da minha loja</h2>
+                    <p>Dados cadastrais e localização da sua unidade.</p>
+                </div>
+
+                <div class="cardMinhaLoja">
+                    <div class="cabecalhoLoja">
+                        <div class="iconeLoja grande"></div>
+
+                        <div>
+                            <h3></h3>
+                        </div>
+                    </div>
+
+                    <div class="gradeInformacoes">
+                        <div>
+                            <span>Responsável</span>
+                            <strong></strong>
+                        </div>
+
+                        <div>
+                            <span>E-mail</span>
+                            <strong></strong>
+                        </div>
+
+                        <div>
+                            <span>Telefone</span>
+                            <strong></strong>
+                        </div>
+
+                        <div>
+                            <span>Estado</span>
+                            <strong></strong>
+                        </div>
+
+                        <div>
+                            <span>Cidade</span>
+                            <strong></strong>
+                        </div>
+
+                        <div>
+                            <span>Região</span>
+                            <strong></strong>
+                        </div>
+
+                        <div class="enderecoCompleto">
+                            <span>Endereço</span>
+                            <strong></strong>
+                        </div>
+                    </div>
+
+                    <a href="#Configuracoes" class="btnEditarLoja">
+                        Editar informações da loja
+                    </a>
+                </div>
+            </section>
+
+
+            <!-- CONFIGURAÇÕES -->
+            <section id="Configuracoes">
+                <div class="tituloBloco">
+                    <h2>Configurações</h2>
+                    <p>Gerenciamento das informações da sua conta.</p>
+                </div>
+
+                <div class="cardConfiguracoes">
+                    <div>
+                        <strong>Dados da conta</strong>
+                        <p>Gerencie suas informações de acesso e cadastro.</p>
+                    </div>
+
+                    <a href="#MinhaLoja" class="acaoEditar">Gerenciar</a>
+                </div>
+
+                <div class="cardConfiguracoes">
+                    <div>
+                        <strong>Informações comerciais</strong>
+                        <p>Consulte os dados comerciais da sua loja.</p>
+                    </div>
+
+                    <a href="#MinhaLoja" class="acaoEditar">Gerenciar</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+    <!-- RODAPÉ -->
     <footer>
-        <p>&copy; 2026 ClimaMax - Todos os direitos reservados.</p>
-        <p>Atendimento ao cliente: (27) 99999-9999 | contato@climamax.com.br</p>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>

@@ -1,81 +1,59 @@
-/*Elementos das páginas de cadastro e login*/
-const entrar = document.getElementById("entrar");
-const cadastrar = document.getElementById("cadastrar");
-const formulario = document.getElementById("form");
-const opcoes = document.getElementById("opcoes");
+/* ========== LOGIN (index.html) ========== */
 
-/*Login*/
+const formLogin = document.getElementById("form");
+const botaoCadastrar = document.getElementById("cadastrar");
 
-if (entrar) {
-    entrar.addEventListener("click", function(event) {
+if (formLogin) {
+    formLogin.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const usuario = document.getElementById("email").value;
+        const email = document.getElementById("email").value.trim();
         const senha = document.getElementById("senha").value;
 
-        if (usuario === "throsfox@gmail.com" && senha === "1234") {
-            window.location.href = "inicio.html";
-        } else {
-            alert("Usuário ou senha incorretos.");
+        const usuario = lerUsuarios().find(
+            u => u.email === email && u.senha === senha
+        );
+
+        if (!usuario) {
+            alert("E-mail ou senha incorretos.");
+            return;
         }
+
+        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+        irParaPainel(usuario.tipo);
     });
 }
 
-/*Cadastro*/
-if(cadastrar){
-    cadastrar.addEventListener("click", function(event) {
+if (botaoCadastrar) {
+    botaoCadastrar.addEventListener("click", function () {
         window.location.href = "cadastrar.html";
-    })
-}
-
-if (formulario && opcoes) {
-    formulario.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const tipoCadastro = opcoes.value;
-
-        if (tipoCadastro === "vendedor") {
-            window.location.href = "vendedor.html";
-
-        } else if (tipoCadastro === "cliente") {
-            window.location.href = "cliente.html";
-
-        } else {
-            alert("Selecione um tipo de cadastro.");
-        }
     });
 }
 
-const tipoCadastro = document.getElementById("opcoes");
-const dadosAdicionais = document.getElementById("dadosAdicionais");
-const campoCPF = document.getElementById("campoCPF");
-const campoCNPJ = document.getElementById("campoCNPJ");
-const cpf = document.getElementById("cpf");
-const cnpj = document.getElementById("cnpj");
+/* ========== CADASTRO (cadastrar.html) ========== */
 
-tipoCadastro.addEventListener("change", function() {
+const formCadastro = document.getElementById("cadastroForm");
 
-    dadosAdicionais.hidden = false;
+if (formCadastro) {
+    const selectTipo = document.getElementById("opcoes");
+    const dadosAdicionais = document.getElementById("dadosAdicionais");
+    const campoCPF = document.getElementById("campoCPF");
+    const campoCNPJ = document.getElementById("campoCNPJ");
+    const cpf = document.getElementById("cpf");
+    const cnpj = document.getElementById("cnpj");
+    const nomeEmpresa = document.getElementById("NomeEmpresa");
 
-    campoCPF.hidden = true;
-    campoCNPJ.hidden = true;
+    // Mostra CPF (cliente) ou CNPJ + empresa (vendedor)
+    selectTipo.addEventListener("change", function () {
+        const ehCliente = selectTipo.value === "cliente";
+        const ehVendedor = selectTipo.value === "vendedor";
 
-    cpf.required = false;
-    cnpj.required = false;
+        dadosAdicionais.hidden = false;
+        campoCPF.hidden = !ehCliente;
+        campoCNPJ.hidden = !ehVendedor;
 
-    if (tipoCadastro.value === "cliente") {
-
-        campoCPF.hidden = false;
-        cpf.required = true;
-
-    }
-
-    else if (tipoCadastro.value === "vendedor") {
-
-        campoCNPJ.hidden = false;
-        cnpj.required = true;
-
-    }
-
-});
-
+        cpf.required = ehCliente;
+        cnpj.required = ehVendedor;
+        nomeEmpresa.required = ehVendedor;
+    });
+}
