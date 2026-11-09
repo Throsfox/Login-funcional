@@ -1,0 +1,258 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+/* Barra de Navegação */
+#BarraNav {
+    width: 100%;
+    min-height: 64px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+#Navegacao {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav h3 {
+    font-size: 1.1rem;
+}
+
+#BarraPesq {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+#BarraInfo {
+    display: flex;
+    align-items: center;
+}
+
+#BarraInfo img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    object-fit: cover;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+
+/* Banner Principal */
+#BannerPrincipal {
+    background-color: #00bcd4;
+    color: white;
+    text-align: center;
+    padding: 40px 15px;
+}
+
+#BannerConteudo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#BannerConteudo p {
+    font-size: 0.95rem;
+}
+
+/* Seção de Categorias */
+#Categorias {
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 15px;
+    text-align: center;
+    width: 100%;
+}
+
+#Categorias h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+#gradeCategorias {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardCategoria {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    flex: 1 1 250px;
+    max-width: 350px;
+}
+
+.cardCategoria h3 {
+    margin-bottom: 5px;
+}
+
+.cardCategoria p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Vitrine de Produtos */
+.container-produtos {
+    max-width: 1200px;
+    margin: 15px auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.container-produtos > h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.grade-produtos {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.produtoCard {
+    background: white;
+    border: 1px solid #ddd;
+    flex: 1 1 260px;
+    max-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tagDesconto {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 3px 6px;
+    font-size: 0.8rem;
+}
+
+.produtoImg {
+    height: 150px;
+    background-color: #e0e0e0;
+}
+
+.produtoInfo {
+    padding: 15px;
+}
+
+.marca {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.produtoInfo h4 {
+    font-size: 0.95rem;
+    margin: 5px 0 10px 0;
+}
+
+.precoAntigo {
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.precoAtual {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.parcelamento {
+    font-size: 0.8rem;
+    color: green;
+    margin-bottom: 15px;
+}
+
+.btn-comprar {
+    width: 100%;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-comprar:hover {
+    background-color: #0097a7;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.85rem;
+}
+
+footer p + p {
+    margin-top: 5px;
+}
+
+/* ==========================================
+   MEDIA QUERIES (Ajustes finos para celulares)
+   ========================================== */
+@media (max-width: 768px) {
+    #BarraNav {
+        height: auto;
+        padding: 10px;
+    }
+
+    #Navegacao {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    nav h3 {
+        position: static; /* Remove o absolute para comportar no fluxo flex */
+    }
+
+    #BarraPesq {
+        max-width: 100%;
+    }
+
+    #BarraInfo {
+        position: static;
+        justify-content: center;
+    }
+
+    #BannerConteudo h1 {
+        font-size: 1.5rem;
+    }
+}
