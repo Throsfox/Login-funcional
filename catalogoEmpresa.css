@@ -87,7 +87,6 @@ body {
     flex: 1;
 }
 
-
 /* MENU LATERAL */
 #MenuLateral {
     width: 250px;
@@ -141,7 +140,7 @@ body {
 .menuOpcoes h4 {
     margin: 0 0 13px 9px;
     color: #89969e;
-    font-size: 10px;
+    font-size: 18px;
     letter-spacing: 1px;
 }
 
@@ -154,7 +153,7 @@ body {
     gap: 11px;
     border-radius: 7px;
     color: #52616b;
-    font-size: 13px;
+    font-size: 16px;
     text-decoration: none;
     transition: 0.2s;
 }
@@ -177,7 +176,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .menuInferior p {
