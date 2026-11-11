@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de ar LTDA | Anunciar produto</title>
+    <link rel="stylesheet" href="anunciarProduto.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <div id="BarraNav">
+        <nav id="Navegacao">
+            <h3 class="logo">Central de ar LTDA | Painel do Vendedor</h3>
+
+            <div id="InfoVendedor">
+                <div class="dadosVendedor">
+                    <strong id="nomeUsuario"></strong>
+                    <span>Vendedor parceiro</span>
+                </div>
+
+                <img src="imagens/pessoa.png" alt="Perfil do vendedor">
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="estruturaPainel">
+
+        <!-- MENU LATERAL -->
+        <aside id="MenuLateral">
+            <div class="identificacaoLoja">
+                <div class="iconeLoja"></div>
+
+                <div>
+                    <h3 id="nomeLoja"></h3>
+                    <p id="regiaoLoja"></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <nav class="menuOpcoes">
+                <h4>MENU PRINCIPAL</h4>
+
+                <a href="vendedor.html#Dashboard" class="opcaoMenu">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="vendedor.html#MeusProdutos" class="opcaoMenu">
+                    <span>▣</span>
+                    Meus Produtos
+                </a>
+
+                <a href="vendedor.html#Promocoes" class="opcaoMenu">
+                    <span>٪</span>
+                    Promoções
+                </a>
+
+                <a href="vendedor.html#MinhaLoja" class="opcaoMenu">
+                    <span>⌂</span>
+                    Minha Loja
+                </a>
+
+                <a href="vendedor.html#Configuracoes" class="opcaoMenu">
+                    <span>⚙</span>
+                    Configurações
+                </a>
+
+                <a href="pedidos.html" class="opcaoMenu">
+                    <span>☰</span>
+                    Pedidos
+                </a>
+
+                <a href="empresa.html" class="opcaoMenu ativa">
+                    <span>▤</span>
+                    Catálogo da Central
+                </a>
+
+                <a href="cliente.html" class="opcaoMenu">
+                    <span>◫</span>
+                    Ver vitrine
+                </a>
+            </nav>
+
+            <div class="menuInferior">
+                <p>Central de ar LTDA</p>
+                <a href="index.html" class="linkSair">Sair</a>
+            </div>
+        </aside>
+
+
+        <!-- ÁREA DE TRABALHO -->
+        <main id="ConteudoPainel">
+
+            <!-- TÍTULO DA PÁGINA -->
+            <section class="cabecalhoPagina">
+                <a href="empresa.html" class="voltarCatalogo">← Voltar ao catálogo</a>
+                <!-- O JAVASCRIPT TROCA O TÍTULO PARA "Editar anúncio" QUANDO FOR EDIÇÃO -->
+                <h1 id="tituloAnuncio">Anunciar produto</h1>
+                <p>Defina o preço e a disponibilidade deste produto na sua loja.</p>
+            </section>
+
+
+            <!-- FORMULÁRIO -->
+            <form id="formAnuncio">
+
+                <!-- PRODUTO DO CATÁLOGO -->
+                <section class="blocoFormulario">
+                    <div class="tituloBloco">
+                        <h2>Produto do catálogo</h2>
+                        <p>Dados definidos pela Central de ar. Não podem ser alterados.</p>
+                    </div>
+
+                    <div class="gradeFormulario">
+                        <div class="campoFormulario">
+                            <label for="nomeProduto">Nome do produto</label>
+                            <input type="text" id="nomeProduto" name="nomeProduto" readonly>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label for="modeloProduto">Modelo</label>
+                            <input type="text" id="modeloProduto" name="modeloProduto" readonly>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label for="tipoProduto">Tipo de produto</label>
+                            <input type="text" id="tipoProduto" name="tipoProduto" readonly>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label for="precoFabrica">Preço de fábrica (R$)</label>
+                            <input type="text" id="precoFabrica" name="precoFabrica" readonly>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- PREÇO, ESTOQUE E PROMOÇÃO -->
+                <section class="blocoFormulario">
+                    <div class="tituloBloco">
+                        <h2>Preço, estoque e promoção</h2>
+                        <p>Informe como o produto será vendido na sua loja.</p>
+                    </div>
+
+                    <div class="gradeFormulario">
+                        <div class="campoFormulario">
+                            <label for="precoVenda">Preço de venda (R$) <span>*</span></label>
+                            <input type="number" id="precoVenda" name="precoVenda"
+                                placeholder="0,00" min="0.01" step="0.01" required>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label for="estoque">Quantidade em estoque <span>*</span></label>
+                            <input type="number" id="estoque" name="estoque"
+                                placeholder="0" min="0" required>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label for="precoPromocional">Preço promocional (R$)</label>
+                            <input type="number" id="precoPromocional" name="precoPromocional"
+                                placeholder="0,00" min="0.01" step="0.01">
+                            <small>Opcional. Deve ser menor que o preço de venda.</small>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label for="validadePromocao">Validade da promoção</label>
+                            <input type="date" id="validadePromocao" name="validadePromocao">
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- DISPONIBILIDADE -->
+                <section class="blocoFormulario">
+                    <div class="tituloBloco">
+                        <h2>Disponibilidade na loja</h2>
+                        <p>Defina se o produto poderá ser visto e comprado pelos clientes.</p>
+                    </div>
+
+                    <div class="campoFormulario campoSituacao">
+                        <label for="situacaoAnuncio">Situação do anúncio <span>*</span></label>
+                        <select id="situacaoAnuncio" name="situacaoAnuncio" required>
+                            <option value="ativo">Ativo</option>
+                            <option value="inativo">Inativo</option>
+                        </select>
+                    </div>
+                </section>
+
+
+                <!-- AÇÕES DO FORMULÁRIO -->
+                <div class="acoesFormulario">
+                    <a href="empresa.html" class="btnCancelar">Cancelar</a>
+                    <button type="reset" class="btnLimpar">Limpar formulário</button>
+                    <button type="submit" class="btnSalvar">Anunciar produto</button>
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
+    </footer>
+    <script src="anunciarProduto.js"></script>
+</body>
+</html>

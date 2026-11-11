@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de ar LTDA | Meus pedidos</title>
+    <link rel="stylesheet" href="meusPedidos.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
+</head>
+<body>
+    <!-- Navegação -->
+    <div id="BarraNav">
+        <nav id="Navegacao">
+            <h3 class="logo"><a href="cliente.html">Central de ar LTDA</a></h3>
+            <input id="BarraPesq" type="text" placeholder="Pesquisar por modelo, BTU, marca...">
+            <div id="BarraInfo">
+                <a href="vendedor.html" class="linkPedidos somenteVendedor">Meu painel</a>
+                <a href="empresa.html" class="linkPedidos somenteAdmin">Catálogo</a>
+                <a href="meusPedidos.html" class="linkPedidos">Meus pedidos</a>
+                <a href="index.html" class="linkPedidos linkSair">Sair</a>
+                <a title="Notificações" class="Info"><img id="ImgNotifi" src="imagens/sino.png"></a>
+                <a title="Carrinho" class="Info"><img id="ImgCarrinho" src="imagens/carrinho.png"></a>
+                <a title="Minha Conta" class="Info"><img id="UsuConta" src="imagens/pessoa.png"></a>
+            </div>
+        </nav>
+    </div>
+
+    <main id="MeusPedidos" class="containerPedidos">
+        <div class="cabecalhoPedidos">
+            <div>
+                <h2>Meus pedidos</h2>
+                <p>Acompanhe as compras realizadas na Central de ar.</p>
+            </div>
+
+            <select id="filtroSituacao" class="filtroPedidos">
+                        <option value="">Todas as situações</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="enviado">Enviado</option>
+                        <option value="entregue">Entregue</option>
+                        <option value="cancelado">Cancelado</option>
+            </select>
+        </div>
+
+        <div class="tabelaContainer">
+            <table id="TabelaPedidos">
+                <thead>
+                    <tr>
+                        <th>Pedido</th>
+                        <th>Data</th>
+                        <th>Produto</th>
+                        <th>Loja</th>
+                        <th>Qtd.</th>
+                        <th>Total</th>
+                        <th>Situação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <!-- O JAVASCRIPT INSERIRÁ AS LINHAS NESTE TBODY -->
+                <tbody></tbody>
+            </table>
+
+            <p class="semPedidos" id="semPedidos" hidden>
+                Você ainda não fez nenhum pedido. <a href="cliente.html">Ver produtos</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

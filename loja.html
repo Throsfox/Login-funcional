@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de ar LTDA | Loja</title>
+    <link rel="stylesheet" href="loja.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
+</head>
+<body>
+    <!-- Navegação -->
+    <div id="BarraNav">
+        <nav id="Navegacao">
+            <h3 class="logo"><a href="cliente.html">Central de ar LTDA</a></h3>
+            <input id="BarraPesq" type="text" placeholder="Pesquisar por modelo, BTU, marca...">
+            <div id="BarraInfo">
+                <a href="vendedor.html" class="linkPedidos somenteVendedor">Meu painel</a>
+                <a href="empresa.html" class="linkPedidos somenteAdmin">Catálogo</a>
+                <a href="meusPedidos.html" class="linkPedidos">Meus pedidos</a>
+                <a href="index.html" class="linkPedidos linkSair">Sair</a>
+                <a title="Notificações" class="Info"><img id="ImgNotifi" src="imagens/sino.png"></a>
+                <a title="Carrinho" class="Info"><img id="ImgCarrinho" src="imagens/carrinho.png"></a>
+                <a title="Minha Conta" class="Info"><img id="UsuConta" src="imagens/pessoa.png"></a>
+            </div>
+        </nav>
+    </div>
+
+    <header id="BannerPrincipal">
+        <div id="BannerConteudo">
+            <h1 id="nomeLoja"></h1>
+            <p id="localLoja"></p>
+
+            <div class="infoLoja">
+                <span>Telefone: <strong id="telefoneLoja"></strong></span>
+                <span>E-mail: <strong id="emailLoja"></strong></span>
+            </div>
+
+            <a href="vendedor.html" class="linkGerenciarLoja somenteVendedor">Gerenciar minha loja</a>
+        </div>
+    </header>
+
+    <!-- Produtos da loja -->
+    <main id="produtos" class="container-produtos">
+        <h2>Produtos da loja</h2>
+
+        <div class="areaFiltrosLoja">
+            <input type="text" id="pesquisaLoja" class="campoFiltroLoja" placeholder="Pesquisar nesta loja...">
+
+            <select id="filtroTipo" class="campoFiltroLoja">
+                <option value="">Todos os tipos</option>
+                <option value="ar-condicionado">Ar-condicionado</option>
+                <option value="climatizador">Climatizador</option>
+                <option value="acessorio">Acessório</option>
+                <option value="peca">Peça de reposição</option>
+            </select>
+        </div>
+
+        <!-- O JAVASCRIPT INSERIRÁ OS CARDS NESTA GRADE (mesmo modelo de card do cliente.html) -->
+        <div class="grade-produtos"></div>
+
+        <p class="semProdutos" id="semProdutos" hidden>Esta loja ainda não possui produtos anunciados.</p>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
+    </footer>
+    <script src="loja.js"></script>
+</body>
+</html>

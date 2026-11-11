@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de ar LTDA | Novo produto</title>
     <link rel="stylesheet" href="novoProduto.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
 </head>
 
 <body>
@@ -58,11 +60,16 @@
                     <span>+</span>
                     Novo produto
                 </a>
+
+                <a href="cliente.html" class="opcaoMenu">
+                    <span>◫</span>
+                    Ver vitrine
+                </a>
             </nav>
 
             <div class="menuInferior">
                 <p>Central de ar LTDA</p>
-                <a href="index.html">Voltar à página principal</a>
+                <a href="index.html" class="linkSair">Sair</a>
             </div>
         </aside>
 
@@ -124,6 +131,13 @@
                             <textarea id="descricaoProduto" name="descricaoProduto" rows="4"
                                 placeholder="Descreva as características e os detalhes do produto..."
                                 required></textarea>
+                        </div>
+
+                        <div class="campoFormulario campoCompleto">
+                            <label for="imagemProduto">Imagem do produto</label>
+                            <input type="file" id="imagemProduto" name="imagemProduto"
+                                accept="image/png, image/jpeg">
+                            <small>Opcional. Formatos JPG ou PNG.</small>
                         </div>
                     </div>
                 </section>

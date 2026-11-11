@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de ar LTDA | Painel da Empresa</title>
     <link rel="stylesheet" href="empresa.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
 </head>
 
 <body>
+    <!-- Classes somenteAdmin e somenteVendedor: o JavaScript mostrará ou esconderá estes elementos conforme o tipo de usuário -->
     <!-- CABEÇALHO -->
     <div id="BarraNav">
         <nav id="Navegacao">
-            <h3 class="logo">Central de ar LTDA | Painel da Empresa</h3>
+            <h3 class="logo">Central de ar LTDA | Catálogo da Central</h3>
 
             <div id="InfoVendedor">
                 <div class="dadosVendedor">
                     <strong id="nomeUsuario"></strong>
-                    <span>Administrador</span>
+                    <span id="tipoUsuario"></span>
                 </div>
 
-                <img src="imagens/pessoa.png" alt="Perfil do administrador">
+                <img src="imagens/pessoa.png" alt="Perfil do usuário">
             </div>
         </nav>
     </div>
@@ -34,8 +37,8 @@
                 <div class="iconeLoja"></div>
 
                 <div>
-                    <h3 id="nomeEmpresa"></h3>
-                    <p>Fabricante</p>
+                    <h3 id="nomeConta"></h3>
+                    <p id="tipoConta"></p>
                 </div>
             </div>
 
@@ -44,7 +47,7 @@
             <nav class="menuOpcoes">
                 <h4>MENU PRINCIPAL</h4>
 
-                <a href="#Dashboard" class="opcaoMenu ativa">
+                <a href="#Dashboard" class="opcaoMenu ativa somenteAdmin">
                     <span>▦</span>
                     Dashboard
                 </a>
@@ -54,16 +57,25 @@
                     Catálogo
                 </a>
 
-                <!-- TELA SEPARADA (será criada) -->
-                <a href="novo-produto.html" class="opcaoMenu">
+                <a href="novoProduto.html" class="opcaoMenu somenteAdmin">
                     <span>+</span>
                     Novo produto
+                </a>
+
+                <a href="vendedor.html" class="opcaoMenu somenteVendedor">
+                    <span>⌂</span>
+                    Painel da loja
+                </a>
+
+                <a href="cliente.html" class="opcaoMenu">
+                    <span>◫</span>
+                    Ver vitrine
                 </a>
             </nav>
 
             <div class="menuInferior">
                 <p>Central de ar LTDA</p>
-                <a href="index.html">Voltar à página principal</a>
+                <a href="index.html" class="linkSair">Sair</a>
             </div>
         </aside>
 
@@ -72,7 +84,7 @@
         <main id="ConteudoPainel">
 
             <!-- DASHBOARD -->
-            <section id="Dashboard">
+            <section id="Dashboard" class="somenteAdmin">
                 <div class="tituloSecao">
                     <div>
                         <h1>Dashboard</h1>
@@ -120,8 +132,7 @@
                         <p>Produtos que os vendedores podem comprar para revender.</p>
                     </div>
 
-                    <!-- TELA SEPARADA (será criada) -->
-                    <a href="novoProduto.html" class="btnAdicionar">
+                    <a href="novoProduto.html" class="btnAdicionar somenteAdmin">
                         + Novo produto
                     </a>
                 </div>
@@ -164,6 +175,8 @@
                         </thead>
 
                         <!-- O JAVASCRIPT INSERIRÁ AS LINHAS NESTE TBODY -->
+                        <!-- ADMINISTRADOR: ações Editar e Descontinuar -->
+                        <!-- VENDEDOR: ação Anunciar na minha loja (leva para anunciarProduto.html) -->
                         <tbody></tbody>
                     </table>
                 </div>
@@ -181,5 +194,6 @@
     <footer>
         <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
     </footer>
+    <script src="empresa.js"></script>
 </body>
 </html>

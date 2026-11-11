@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de ar LTDA | Pedidos</title>
+    <link rel="stylesheet" href="pedidos.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <div id="BarraNav">
+        <nav id="Navegacao">
+            <h3 class="logo">Central de ar LTDA | Painel do Vendedor</h3>
+
+            <div id="InfoVendedor">
+                <div class="dadosVendedor">
+                    <strong id="nomeUsuario"></strong>
+                    <span>Vendedor parceiro</span>
+                </div>
+
+                <img src="imagens/pessoa.png" alt="Perfil do vendedor">
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="estruturaPainel">
+
+        <!-- MENU LATERAL -->
+        <aside id="MenuLateral">
+            <div class="identificacaoLoja">
+                <div class="iconeLoja"></div>
+
+                <div>
+                    <h3 id="nomeLoja"></h3>
+                    <p id="regiaoLoja"></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <nav class="menuOpcoes">
+                <h4>MENU PRINCIPAL</h4>
+
+                <a href="vendedor.html#Dashboard" class="opcaoMenu">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="vendedor.html#MeusProdutos" class="opcaoMenu">
+                    <span>▣</span>
+                    Meus Produtos
+                </a>
+
+                <a href="vendedor.html#Promocoes" class="opcaoMenu">
+                    <span>٪</span>
+                    Promoções
+                </a>
+
+                <a href="vendedor.html#MinhaLoja" class="opcaoMenu">
+                    <span>⌂</span>
+                    Minha Loja
+                </a>
+
+                <a href="vendedor.html#Configuracoes" class="opcaoMenu">
+                    <span>⚙</span>
+                    Configurações
+                </a>
+
+                <a href="pedidos.html" class="opcaoMenu ativa">
+                    <span>☰</span>
+                    Pedidos
+                </a>
+
+                <a href="empresa.html" class="opcaoMenu">
+                    <span>▤</span>
+                    Catálogo da Central
+                </a>
+
+                <a href="cliente.html" class="opcaoMenu">
+                    <span>◫</span>
+                    Ver vitrine
+                </a>
+            </nav>
+
+            <div class="menuInferior">
+                <p>Central de ar LTDA</p>
+                <a href="index.html" class="linkSair">Sair</a>
+            </div>
+        </aside>
+
+
+        <!-- ÁREA DE TRABALHO -->
+        <main id="ConteudoPainel">
+
+            <!-- RESUMO -->
+            <section id="Pedidos">
+                <div class="tituloSecao">
+                    <div>
+                        <h1>Pedidos</h1>
+                        <p>Acompanhe os pedidos feitos aos produtos da sua loja.</p>
+                    </div>
+                </div>
+
+                <div class="gradeIndicadores">
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Pedidos pendentes</span>
+                        </div>
+
+                        <h2 id="pedidosPendentes"></h2>
+                        <p>Aguardando envio</p>
+                    </div>
+
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Pedidos enviados</span>
+                        </div>
+
+                        <h2 id="pedidosEnviados"></h2>
+                        <p>A caminho do cliente</p>
+                    </div>
+
+                    <div class="cardIndicador">
+                        <div class="indicadorTopo">
+                            <span>Pedidos entregues</span>
+                        </div>
+
+                        <h2 id="pedidosEntregues"></h2>
+                        <p>Pedidos concluídos</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- PEDIDOS RECEBIDOS -->
+            <section id="ListaPedidos">
+                <div class="cabecalhoProdutos">
+                    <div>
+                        <h2>Pedidos recebidos</h2>
+                        <p>Atualize a situação de cada pedido conforme o andamento.</p>
+                    </div>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="areaFiltros">
+                    <input
+                        type="text"
+                        id="pesquisaPedido"
+                        placeholder="Pesquisar por pedido, produto ou cliente..."
+                        class="campoPesquisa"
+                    >
+
+                    <select id="filtroSituacao" class="campoFiltro">
+                        <option value="">Todas as situações</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="enviado">Enviado</option>
+                        <option value="entregue">Entregue</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+                </div>
+
+                <!-- TABELA DE PEDIDOS -->
+                <div class="containerTabela">
+                    <table id="TabelaPedidos">
+                        <thead>
+                            <tr>
+                                <th>Pedido</th>
+                                <th>Data</th>
+                                <th>Produto</th>
+                                <th>Cliente</th>
+                                <th>Qtd.</th>
+                                <th>Total</th>
+                                <th>Situação</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <!-- O JAVASCRIPT INSERIRÁ AS LINHAS NESTE TBODY -->
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="rodapeTabela">
+                    <p id="resumoPedidos"></p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

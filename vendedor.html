@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de ar LTDA | Painel do Vendedor</title>
     <link rel="stylesheet" href="vendedor.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
 </head>
 
 <body>
@@ -68,11 +70,26 @@
                     <span>⚙</span>
                     Configurações
                 </a>
+
+                <a href="pedidos.html" class="opcaoMenu">
+                    <span>☰</span>
+                    Pedidos
+                </a>
+
+                <a href="empresa.html" class="opcaoMenu">
+                    <span>▤</span>
+                    Catálogo da Central
+                </a>
+
+                <a href="cliente.html" class="opcaoMenu">
+                    <span>◫</span>
+                    Ver vitrine
+                </a>
             </nav>
 
             <div class="menuInferior">
                 <p>Central de ar LTDA</p>
-                <a href="index.html">Voltar à página principal</a>
+                <a href="index.html" class="linkSair">Sair</a>
             </div>
         </aside>
 
@@ -129,9 +146,9 @@
                         <p>Gerencie os produtos comercializados pela sua loja.</p>
                     </div>
 
-                    <button type="button" class="btnAdicionar">
+                    <a href="empresa.html" class="btnAdicionar">
                         + Adicionar produto
-                    </button>
+                    </a>
                 </div>
 
                 <!-- FILTROS -->
@@ -284,5 +301,6 @@
     <footer>
         <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
     </footer>
+    <script src="vendedor.js"></script>
 </body>
 </html>

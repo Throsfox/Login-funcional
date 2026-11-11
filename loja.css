@@ -1,0 +1,308 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+/* Barra de Navegação */
+#BarraNav {
+    width: 100%;
+    min-height: 64px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+#Navegacao {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav h3 {
+    font-size: 1.1rem;
+}
+
+#BarraPesq {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+#BarraInfo {
+    display: flex;
+    align-items: center;
+}
+
+#BarraInfo img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    object-fit: cover;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+
+/* Links da Navegação */
+nav h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.linkPedidos {
+    margin-right: 8px;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.linkPedidos:hover {
+    text-decoration: underline;
+}
+
+/* Banner Principal */
+#BannerPrincipal {
+    background-color: #00bcd4;
+    color: white;
+    text-align: center;
+    padding: 40px 15px;
+}
+
+#BannerConteudo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#BannerConteudo p {
+    font-size: 0.95rem;
+}
+
+/* Vitrine de Produtos */
+.container-produtos {
+    max-width: 1200px;
+    margin: 15px auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.container-produtos > h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.grade-produtos {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.produtoCard {
+    background: white;
+    border: 1px solid #ddd;
+    flex: 1 1 260px;
+    max-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tagDesconto {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 3px 6px;
+    font-size: 0.8rem;
+}
+
+.produtoImg {
+    height: 150px;
+    background-color: #e0e0e0;
+}
+
+.produtoInfo {
+    padding: 15px;
+}
+
+.marca {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.produtoInfo h4 {
+    font-size: 0.95rem;
+    margin: 5px 0 10px 0;
+}
+
+.precoAntigo {
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.precoAtual {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.parcelamento {
+    font-size: 0.8rem;
+    color: green;
+    margin-bottom: 15px;
+}
+
+.vendidoPor {
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.vendidoPor a {
+    color: #0097a7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.vendidoPor a:hover {
+    text-decoration: underline;
+}
+
+.btn-comprar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-comprar:hover {
+    background-color: #0097a7;
+}
+
+/* Respeita o atributo hidden */
+[hidden] {
+    display: none !important;
+}
+
+/* Dados da Loja */
+.infoLoja {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.linkGerenciarLoja {
+    margin-top: 15px;
+    padding: 8px 14px;
+    display: inline-block;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.linkGerenciarLoja:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Filtros e Estado Vazio */
+.areaFiltrosLoja {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.campoFiltroLoja {
+    flex: 1 1 200px;
+    max-width: 300px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.semProdutos {
+    padding: 30px 15px;
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.85rem;
+}
+
+footer p + p {
+    margin-top: 5px;
+}
+
+/* ==========================================
+   MEDIA QUERIES (Ajustes finos para celulares)
+   ========================================== */
+@media (max-width: 768px) {
+    #BarraNav {
+        height: auto;
+        padding: 10px;
+    }
+
+    #Navegacao {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    #BarraPesq {
+        max-width: 100%;
+    }
+
+    #BarraInfo {
+        justify-content: center;
+    }
+
+    #BannerConteudo h1 {
+        font-size: 1.5rem;
+    }
+}

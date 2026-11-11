@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de ar LTDA</title>
     <link rel="stylesheet" href="cliente.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
 </head>
 <body>
     <!-- Navegação -->
     <div id="BarraNav">
         <nav id="Navegacao">
-            <h3 class="logo">Empresa de ar LTDA</h3>
+            <h3 class="logo">Central de ar LTDA</h3>
             <input id="BarraPesq" type="text" placeholder="Pesquisar por modelo, BTU, marca...">
             <div id="BarraInfo">
+                <a href="vendedor.html" class="linkPedidos somenteVendedor">Meu painel</a>
+                <a href="empresa.html" class="linkPedidos somenteAdmin">Catálogo</a>
+                <a href="meusPedidos.html" class="linkPedidos">Meus pedidos</a>
+                <a href="index.html" class="linkPedidos linkSair">Sair</a>
                 <a title="Notificações" class="Info"><img id="ImgNotifi" src="imagens/sino.png"></a>
                 <a title="Carrinho" class="Info"><img id="ImgCarrinho" src="imagens/carrinho.png"></a>
                 <a title="Minha Conta" class="Info"><img id="UsuConta" src="imagens/pessoa.png"></a>
@@ -61,7 +67,8 @@
                     <div class="precoAntigo">R$ 2.499,00</div>
                     <div class="precoAtual">R$ 2.124,15</div>
                     <p class="parcelamento">em até 10x sem juros</p>
-                    <button class="btn-comprar">Comprar</button>
+                    <p class="vendidoPor">Vendido por <a href="loja.html?id=1">Nome da loja</a></p>
+                    <a href="produto.html?id=1" class="btn-comprar">Comprar</a>
                 </div>
             </div>
 
@@ -76,7 +83,8 @@
                     <div class="precoAntigo">R$ 3.299,00</div>
                     <div class="precoAtual">R$ 2.969,10</div>
                     <p class="parcelamento">em até 10x sem juros</p>
-                    <button class="btn-comprar">Comprar</button>
+                    <p class="vendidoPor">Vendido por <a href="loja.html?id=2">Nome da loja</a></p>
+                    <a href="produto.html?id=2" class="btn-comprar">Comprar</a>
                 </div>
             </div>
 
@@ -89,7 +97,8 @@
                     <h4>Ar-Condicionado Split Inverter 18.000 BTUs Frio</h4>
                     <div class="precoAtual">R$ 4.199,00</div>
                     <p class="parcelamento">em até 10x sem juros</p>
-                    <button class="btn-comprar">Comprar</button>
+                    <p class="vendidoPor">Vendido por <a href="loja.html?id=3">Nome da loja</a></p>
+                    <a href="produto.html?id=3" class="btn-comprar">Comprar</a>
                 </div>
             </div>
 
@@ -98,8 +107,9 @@
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2026 ClimaMax - Todos os direitos reservados.</p>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
         <p>Atendimento ao cliente: (27) 99999-9999 | contato@climamax.com.br</p>
     </footer>
+    <script src="cliente.js"></script>
 </body>
 </html>

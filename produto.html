@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de ar LTDA | Produto</title>
+    <link rel="stylesheet" href="produto.css">
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
+</head>
+<body>
+    <!-- Navegação -->
+    <div id="BarraNav">
+        <nav id="Navegacao">
+            <h3 class="logo"><a href="cliente.html">Central de ar LTDA</a></h3>
+            <input id="BarraPesq" type="text" placeholder="Pesquisar por modelo, BTU, marca...">
+            <div id="BarraInfo">
+                <a href="vendedor.html" class="linkPedidos somenteVendedor">Meu painel</a>
+                <a href="empresa.html" class="linkPedidos somenteAdmin">Catálogo</a>
+                <a href="meusPedidos.html" class="linkPedidos">Meus pedidos</a>
+                <a href="index.html" class="linkPedidos linkSair">Sair</a>
+                <a title="Notificações" class="Info"><img id="ImgNotifi" src="imagens/sino.png"></a>
+                <a title="Carrinho" class="Info"><img id="ImgCarrinho" src="imagens/carrinho.png"></a>
+                <a title="Minha Conta" class="Info"><img id="UsuConta" src="imagens/pessoa.png"></a>
+            </div>
+        </nav>
+    </div>
+
+    <main id="PaginaProduto" class="container-produtos">
+        <a href="cliente.html" class="voltarVitrine">← Voltar aos produtos</a>
+
+        <!-- Detalhes e compra -->
+        <section id="DetalheProduto">
+            <div class="imagemDetalhe"></div>
+
+            <div class="infoDetalhe">
+                <span class="marca" id="tipoProduto"></span>
+                <h1 id="nomeProduto"></h1>
+                <p class="modeloProduto">Modelo: <span id="modeloProduto"></span></p>
+
+                <div class="precoAntigo" id="precoAntigo"></div>
+                <div class="precoAtual" id="precoAtual"></div>
+                <p class="parcelamento" id="parcelamento"></p>
+                <p class="vendidoPor">Vendido por <a href="loja.html" id="linkLoja"></a></p>
+
+                <form id="formCompra">
+                    <div class="campoCompra">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="number" id="quantidade" min="1" value="1" required>
+                    </div>
+
+                    <div class="campoCompra">
+                        <label for="pagamento">Forma de pagamento</label>
+                        <select id="pagamento" required>
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="credito">Cartão de crédito</option>
+                            <option value="debito">Cartão de débito</option>
+                            <option value="pix">Pix</option>
+                            <option value="boleto">Boleto</option>
+                        </select>
+                    </div>
+
+                    <div class="campoCompra">
+                        <span>Entrega em</span>
+                        <strong id="enderecoEntrega"></strong>
+                    </div>
+
+                    <div class="totalCompra">
+                        <span>Total</span>
+                        <strong id="totalPedido"></strong>
+                    </div>
+
+                    <button type="submit" class="btn-comprar">Finalizar compra</button>
+                </form>
+
+                <p class="avisoCompra" id="avisoCompra" hidden></p>
+
+                <!-- Aparece depois que a compra for concluída -->
+                <div id="ConfirmacaoCompra" hidden>
+                    <strong>Pedido realizado com sucesso!</strong>
+                    <p>Acompanhe a situação em <a href="meusPedidos.html">Meus pedidos</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Descrição -->
+        <section class="blocoProduto">
+            <h2>Descrição</h2>
+            <p id="descricaoProduto"></p>
+        </section>
+
+        <!-- Características -->
+        <section class="blocoProduto">
+            <h2>Características</h2>
+
+            <!-- O JAVASCRIPT INSERIRÁ OS PARES <div><dt></dt><dd></dd></div> CONFORME O TIPO DO PRODUTO -->
+            <!-- Ar-condicionado: capacidade, ciclo, tecnologia, tensão, gás, classificação energética -->
+            <!-- Climatizador: reservatório, vazão de ar, tensão, tipo -->
+            <!-- Acessório: categoria, compatibilidade, material -->
+            <!-- Peça: código, compatibilidade, categoria -->
+            <dl id="listaCaracteristicas"></dl>
+        </section>
+
+        <!-- Gerenciar anúncio (somente o vendedor dono do produto) -->
+        <section id="GerenciarAnuncio" class="blocoProduto somenteVendedor">
+            <h2>Gerenciar anúncio</h2>
+            <p>Visível apenas para o vendedor responsável por este produto.</p>
+
+            <form id="formAnuncio">
+                <div class="gradeAnuncio">
+                    <div class="campoCompra">
+                        <label for="precoVenda">Preço de venda (R$)</label>
+                        <input type="number" id="precoVenda" min="0.01" step="0.01" required>
+                    </div>
+
+                    <div class="campoCompra">
+                        <label for="precoPromocional">Preço promocional (R$)</label>
+                        <input type="number" id="precoPromocional" min="0.01" step="0.01">
+                    </div>
+
+                    <div class="campoCompra">
+                        <label for="estoque">Estoque</label>
+                        <input type="number" id="estoque" min="0" required>
+                    </div>
+
+                    <div class="campoCompra">
+                        <label for="situacaoAnuncio">Situação do anúncio</label>
+                        <select id="situacaoAnuncio">
+                            <option value="ativo">Ativo</option>
+                            <option value="inativo">Inativo</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-comprar">Salvar alterações</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; Central de ar LTDA - Todos os direitos reservados.</p>
+    </footer>
+    <script src="produto.js"></script>
+</body>
+</html>

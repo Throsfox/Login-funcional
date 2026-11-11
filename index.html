@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <a id="trapaca" href="vendedor.html">Vendedor</a>
-    <a id="trapaca2" href="cliente.html">Cliente</a>
+    <!-- CONTAS DE TESTE (temporário) -->
+    <div id="trapaca">
+        <strong>Contas de teste</strong><br>
+        cliente@teste.com<br>
+        vendedor@teste.com<br>
+        vendedor2@teste.com<br>
+        admin@teste.com<br>
+        Senha: 1234
+    </div>
     <div id="Back_login">
         <div id="Login">
             <h1>Login</h1>
             <form id="form">
                 <label for="email">E-mail:</label>
-                    <input type="text" name="E-mail" id="email" placeholder>
+                    <input type="email" name="E-mail" id="email" placeholder>
                 <label for="senha">Senha:</label>
                     <input type="password" name="Senha" id="senha" placeholder>
                 <button type="submit" id="entrar">Entrar</button>
@@ -22,6 +29,8 @@
             </form>
         </div>
     </div>
+    <script src="dados.js"></script>
+    <script src="sessao.js"></script>
     <script src="Script.js"></script>
 </body>
 </html>

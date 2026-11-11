@@ -1,0 +1,550 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7f9;
+    color: #263238;
+}
+
+
+/* CABEÇALHO */
+#BarraNav {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e8ec;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#Navegacao {
+    min-height: 75px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 15px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: #087f8c;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+#InfoVendedor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dadosVendedor {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+}
+
+.dadosVendedor strong {
+    font-size: 14px;
+}
+
+.dadosVendedor span {
+    color: #718096;
+    font-size: 12px;
+}
+
+#InfoVendedor img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #e7f3f4;
+}
+
+
+/* ESTRUTURA DO PAINEL */
+.estruturaPainel {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    flex: 1;
+}
+
+
+/* MENU LATERAL */
+#MenuLateral {
+    width: 250px;
+    min-width: 250px;
+    min-height: 650px;
+    padding: 22px 17px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e5ecef;
+    border-radius: 12px;
+}
+
+.identificacaoLoja {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 55px;
+}
+
+.iconeLoja {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: #e3f5f6;
+    color: #087f8c;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.identificacaoLoja h3 {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.identificacaoLoja p {
+    color: #718096;
+    font-size: 12px;
+}
+
+#MenuLateral hr {
+    margin: 22px 0;
+    border: 0;
+    border-top: 1px solid #e8eef1;
+}
+
+.menuOpcoes h4 {
+    margin: 0 0 13px 9px;
+    color: #89969e;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.opcaoMenu {
+    min-height: 43px;
+    margin-bottom: 5px;
+    padding: 11px 12px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border-radius: 7px;
+    color: #52616b;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.opcaoMenu span {
+    width: 18px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.opcaoMenu:hover,
+.opcaoMenu.ativa {
+    background-color: #e8f6f7;
+    color: #087f8c;
+}
+
+.menuInferior {
+    margin-top: auto;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 11px;
+}
+
+.menuInferior p {
+    color: #89969e;
+}
+
+.menuInferior a {
+    color: #087f8c;
+    text-decoration: none;
+}
+
+.menuInferior a:hover {
+    text-decoration: underline;
+}
+
+
+/* ÁREA DE CONTEÚDO */
+#ConteudoPainel {
+    min-width: 0;
+    flex: 1;
+}
+
+.cabecalhoPagina {
+    margin-bottom: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #e5ecef;
+    border-radius: 12px;
+}
+
+.voltarCatalogo {
+    margin-bottom: 16px;
+    display: inline-block;
+    color: #087f8c;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.voltarCatalogo:hover {
+    text-decoration: underline;
+}
+
+.cabecalhoPagina h1 {
+    margin-bottom: 7px;
+    font-size: 24px;
+}
+
+.cabecalhoPagina p {
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* BLOCOS DO FORMULÁRIO */
+.blocoFormulario {
+    margin-bottom: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #e5ecef;
+    border-radius: 12px;
+}
+
+.tituloBloco {
+    margin-bottom: 22px;
+}
+
+.tituloBloco h2 {
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+
+.tituloBloco p {
+    color: #718096;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.gradeFormulario {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.campoFormulario {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campoFormulario label {
+    color: #394a54;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.campoFormulario label span {
+    color: #d34b4b;
+}
+
+.campoFormulario input,
+.campoFormulario select,
+.campoFormulario textarea {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #dce5e9;
+    border-radius: 7px;
+    outline: none;
+    background-color: #ffffff;
+    color: #263238;
+    font-family: inherit;
+    font-size: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campoFormulario textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.campoFormulario input:focus,
+.campoFormulario select:focus,
+.campoFormulario textarea:focus {
+    border-color: #087f8c;
+    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.1);
+}
+
+.campoFormulario input::placeholder,
+.campoFormulario textarea::placeholder {
+    color: #a0acb3;
+}
+
+.campoFormulario small {
+    color: #89969e;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.campoCompleto {
+    grid-column: 1 / -1;
+}
+
+
+/* CAMPOS ESPECÍFICOS */
+.grupoEspecifico {
+    padding: 20px;
+    border: 1px solid #e5ecef;
+    border-radius: 9px;
+    background-color: #fbfdfe;
+}
+
+.grupoEspecifico h3 {
+    margin-bottom: 18px;
+    color: #087f8c;
+    font-size: 14px;
+}
+
+.grupoEspecifico[hidden],
+.avisoTipo[hidden] {
+    display: none;
+}
+
+.avisoTipo {
+    padding: 15px;
+    border: 1px dashed #cbd8de;
+    border-radius: 8px;
+    color: #718096;
+    background-color: #f8fafb;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* SITUAÇÃO DO PRODUTO */
+.campoSituacao {
+    max-width: 420px;
+}
+
+
+/* AÇÕES DO FORMULÁRIO */
+.acoesFormulario {
+    margin: 25px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btnCancelar,
+.btnLimpar,
+.btnSalvar {
+    min-height: 41px;
+    padding: 11px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btnCancelar,
+.btnLimpar {
+    border-color: #dce5e9;
+    background-color: #ffffff;
+    color: #52616b;
+}
+
+.btnCancelar:hover,
+.btnLimpar:hover {
+    background-color: #f1f5f6;
+}
+
+.btnSalvar {
+    background-color: #087f8c;
+    color: #ffffff;
+}
+
+.btnSalvar:hover {
+    background-color: #066873;
+}
+
+
+/* CAMPOS SOMENTE LEITURA */
+.campoFormulario input[readonly] {
+    background-color: #f4f7f9;
+    color: #52616b;
+    cursor: not-allowed;
+}
+
+
+/* RODAPÉ */
+footer {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-top: 1px solid #e1e8ec;
+    color: #89969e;
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* RESPONSIVIDADE - TABLET */
+@media (max-width: 1024px) {
+    .estruturaPainel {
+        padding: 20px;
+        gap: 18px;
+    }
+
+    #MenuLateral {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .cabecalhoPagina,
+    .blocoFormulario {
+        padding: 20px;
+    }
+}
+
+
+/* RESPONSIVIDADE - CELULAR */
+@media (max-width: 768px) {
+    #Navegacao {
+        padding: 14px 18px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .dadosVendedor {
+        display: none;
+    }
+
+    .estruturaPainel {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    #MenuLateral {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+    }
+
+    .menuOpcoes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .menuOpcoes h4 {
+        grid-column: 1 / -1;
+    }
+
+    .opcaoMenu {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .menuInferior {
+        margin-top: 18px;
+        padding-top: 15px;
+    }
+
+    #ConteudoPainel {
+        width: 100%;
+    }
+
+    .cabecalhoPagina,
+    .blocoFormulario {
+        padding: 18px;
+    }
+
+    .gradeFormulario {
+        grid-template-columns: 1fr;
+    }
+
+    .campoCompleto {
+        grid-column: auto;
+    }
+
+    .acoesFormulario {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .btnCancelar,
+    .btnLimpar,
+    .btnSalvar {
+        width: 100%;
+    }
+}
+
+
+/* RESPONSIVIDADE - CELULARES ESTREITOS */
+@media (max-width: 480px) {
+    .logo {
+        max-width: 220px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .menuOpcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .grupoEspecifico {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 17px 12px;
+        line-height: 1.5;
+    }
+}
