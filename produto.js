@@ -11,7 +11,7 @@
     const por = id => document.getElementById(id);
 
     // Quem é quem nesta página
-    const ehDono = USUARIO.tipo === "vendedor" && USUARIO.lojaId === oferta.lojaId;
+    const ehDono = USUARIO.tipo === "vendedor" && USUARIO.loja_id === oferta.loja_id;
     const podeComprar = USUARIO.tipo === "cliente" || (USUARIO.tipo === "vendedor" && !ehDono);
 
     // Dados do produto

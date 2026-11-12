@@ -9,7 +9,7 @@
     }
 
     const por = id => document.getElementById(id);
-    const ehDono = USUARIO.tipo === "vendedor" && USUARIO.lojaId === loja.id;
+    const ehDono = USUARIO.tipo === "vendedor" && USUARIO.loja_id === loja.id;
     const podeComprar = USUARIO.tipo === "cliente" || (USUARIO.tipo === "vendedor" && !ehDono);
 
     document.title = "Central de ar LTDA | " + loja.nome;

@@ -47,9 +47,14 @@ function fazerLogin(email, senha) {
     const usuario = USUARIOS.find(u => u.email === email && u.senha === senha);
     if (!usuario) return null;
 
-    const { senha: senhaDescartada, ...sessao } = usuario;
-    sessionStorage.setItem("usuarioLogado", JSON.stringify(sessao));
-    return sessao;
+    // A loja de um vendedor é a própria conta. `loja_id` = id do vendedor.
+    if (usuario.tipo === "vendedor") {
+        usuario.loja_id = usuario.id;
+    } else {
+        usuario.loja_id = null;
+    }
+    sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+    return usuario;
 }
 
 function sair() {
@@ -96,7 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!PERMITIDO || !USUARIO) return;
 
     // Identificação no cabeçalho e no menu lateral
-    const loja = USUARIO.lojaId ? buscarLoja(USUARIO.lojaId) : null;
+    // A loja do vendedor é a própria conta: `loja_id` = id do vendedor
+    // (dados.js acrescenta `loja_logada` dentro do login).
+    const loja = USUARIO.loja_id ? buscarLoja(USUARIO.loja_id) : null;
     const conta = loja ? loja.nome : "Central de ar LTDA";
 
     escrever(".dadosVendedor strong", USUARIO.nome);

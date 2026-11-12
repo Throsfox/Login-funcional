@@ -48,7 +48,7 @@ if (formularioCadastro && opcoes) {
     const campoCNPJ = document.getElementById("campoCNPJ");
     const cpf = document.getElementById("cpf");
     const cnpj = document.getElementById("cnpj");
-    const nomeEmpresa = document.getElementById("NomeEmpresa");
+    const nomeLoja = document.getElementById("NomeLoja");
 
     opcoes.addEventListener("change", function() {
 
@@ -59,7 +59,7 @@ if (formularioCadastro && opcoes) {
 
         cpf.required = false;
         cnpj.required = false;
-        nomeEmpresa.required = false;
+        nomeLoja.required = false;
 
         if (opcoes.value === "cliente") {
 
@@ -72,7 +72,7 @@ if (formularioCadastro && opcoes) {
 
             campoCNPJ.hidden = false;
             cnpj.required = true;
-            nomeEmpresa.required = true;
+            nomeLoja.required = true;
 
         }
 

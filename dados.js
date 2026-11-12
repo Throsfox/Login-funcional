@@ -16,9 +16,14 @@ const USUARIOS = [
     { id: 4, tipo: "vendedor", nome: "Outro Vendedor", email: "vendedor2@teste.com", senha: "1234", lojaId: 2 }
 ];
 
-const LOJAS = [
-    { id: 1, nome: "Frio Total Climatização", cidade: "Vitória", estado: "ES", regiao: "Sudeste", telefone: "(27) 3000-0001", email: "contato@friototal.com.br", endereco: "Av. Principal, 100 - Centro" },
-    { id: 2, nome: "Clima Norte", cidade: "Belém", estado: "PA", regiao: "Norte", telefone: "(91) 3000-0002", email: "contato@climanorte.com.br", endereco: "Rua das Palmeiras, 250 - Nazaré" }
+/* A loja de um vendedor é a própria conta.
+   `LOJAS_TEMPORÁRIO` mapeia o id da loja para o vendedor que a representa:
+   1 ↔ Vendedor Teste (Vitória/ES), 2 ↔ Outro Vendedor (Belém/PA).
+   O BACK substituirá isso por um endpoint (ex.: /api/vendedor/{idLoja}/loja)
+   e deixará de manter uma lista de lojas separada. */
+const LOJAS_TEMPORARIO = [
+    { id: 1, vendedorId: 2, nome: "Frio Total Climatização", cidade: "Vitória", estado: "ES", regiao: "Sudeste", telefone: "(27) 3000-0001", email: "contato@friototal.com.br", endereco: "Av. Principal, 100 - Centro" },
+    { id: 2, vendedorId: 4, nome: "Clima Norte", cidade: "Belém", estado: "PA", regiao: "Norte", telefone: "(91) 3000-0002", email: "contato@climanorte.com.br", endereco: "Rua das Palmeiras, 250 - Nazaré" }
 ];
 
 const TIPOS = {
@@ -63,7 +68,7 @@ const OFERTAS = [
 /* FUNÇÕES DE CONSULTA (no futuro, viram chamadas ao servidor) */
 
 function buscarLoja(id) {
-    return LOJAS.find(l => l.id === Number(id)) || null;
+    return LOJAS_TEMPORARIO.find(l => l.id === Number(id)) || null;
 }
 
 function buscarOferta(id) {

@@ -2,7 +2,7 @@
 (function () {
     if (!PERMITIDO) return;
 
-    const loja = buscarLoja(USUARIO.lojaId);
+    const loja = buscarLoja(USUARIO.loja_id);
     const ofertas = ofertasDaLoja(loja.id);
     const promocoes = ofertas.filter(o => o.precoAntigo);
 

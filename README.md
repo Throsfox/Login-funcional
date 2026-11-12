@@ -1,8 +1,20 @@
-### Login-simples
-Apenas uma página simples de login feito para treinamento dos meus estudos
-=======
-**Sobre o projeto**
-Projeto simples de uma página de login funcional, desenvolvido para praticar conceitos de HTML, CSS e JavaScript.
-O principal objetivo foi reforçar minhas habilidades em desenvolvimento front-end, implementando toda a página sem o auxílio de ferramentas de inteligência artificial.
-Para testar só utilizar o meu E-Mail de contato "Throsfox@gmail.com" e a senha "1234"
->>>>>>> 241e23f76416413bf8d8301e54a52297c8a02388
+# Central de Ar LTDA
+
+**Sistema de vendas online simulado** — projeto da matéria **BD2**, desenvolvido para praticar modelagem relacional, banco de dados SQL Server e integração com linguagem de programação.
+
+## O que é esse sistema?
+
+É um sistema de comércio eletrônico **simplificado**, onde a cada vendedor está associada uma loja (conta de vendedor = conta da loja). Permite:
+
+- Login e cadastro de **clientes**, **vendedores** (lojas) e **administrador**;
+- Catálogo de produtos com pesquisa por modelo, marca, tipo e região;
+- Cada vendedor anuncia produtos na sua loja com preço e estoque;
+- Pedidos de compra e controle de status (Pendente → Enviado → Entregue / Cancelado);
+- Painéis de gerenciamento: catálogo do administrador e painel da loja do vendedor.
+
+## Pontos principais estudados
+
+- **Modelagem de banco de dados**: tabelas `cliente`, `vendedor`, `produto`, `pedido`, `item_pedido`, `endereco`, `telefone`, `regiao`, `vendedor_produto`; relacionamentos, chaves estrangeiras e normalização.
+- **Stored procedures (SQL Server)**: login, cadastro, atualização de perfil, listagem de ofertas, consulta de produto, controle de pedidos e gerenciamento de lojas/regiões.
+- **Integração front-end**: páginas HTML/CSS/JS, verificação de sessão e navegação entre telas.
+- **Arquitetura sugerida**: separação de camadas — banco (SQL Server) → API (Flask) → front-end (JS).

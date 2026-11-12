@@ -11,7 +11,7 @@
     }
 
     // Se a loja já anuncia este produto, vai direto para a edição do anúncio
-    const existente = ofertasDaLoja(USUARIO.lojaId).find(o => o.catalogoId === produto.id);
+    const existente = ofertasDaLoja(USUARIO.loja_id).find(o => o.catalogoId === produto.id);
     if (existente) {
         window.location.replace("produto.html?id=" + existente.id + "#GerenciarAnuncio");
         return;
